@@ -2,7 +2,8 @@ import unittest
 from roman import convert
 
 
-class TestHandlerCase(unittest.TestCase):
+class TestRomanCase(unittest.TestCase):
+    """Unit tests of the Roman -> Arabic converter"""
 
     def test_single_digit(self):
         self.assertEqual(1, convert("I"))

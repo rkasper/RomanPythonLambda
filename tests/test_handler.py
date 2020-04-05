@@ -3,6 +3,7 @@ import index
 
 
 class TestHandlerCase(unittest.TestCase):
+    """Tests the Lambda request handler. These tests are more-or-less BDD-style tests."""
 
     def assert_roman_converts_to_arabic(self, roman, arabic):
         param = {'roman': roman}
