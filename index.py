@@ -22,6 +22,9 @@ def handler(event, context):
     roman = event['queryStringParameters']['roman']
     arabic = str(convert(roman))
 
+    # experiment: what happens if we just return an int?
+    arabic = 42
+
     return {'statusCode': 200,
             'body': arabic,
             'headers': {'Content-Type': 'text/plain'}}
