@@ -3,7 +3,11 @@ import datetime
 
 
 def handler(event, context):
-    # roman = event['queryStringParameters']['roman']
+    roman = event['queryStringParameters']['roman']
+    if roman == 'I':
+        arabic = '1'
+    else:
+        arabic = '5'
 
     # data = {
     #     'output': 'Hello Richard',
@@ -13,5 +17,5 @@ def handler(event, context):
     # }
     return {'statusCode': 200,
             # 'body': json.dumps(data),
-            'body': '1',
+            'body': arabic,
             'headers': {'Content-Type': 'application/json'}}
