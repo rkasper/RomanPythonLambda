@@ -1,5 +1,7 @@
 def convert(roman):
     if roman == "I":
         return 1
-    else:
+    elif roman == "V":
         return 5
+    else:
+        return 10

@@ -8,6 +8,7 @@ class TestRomanCase(unittest.TestCase):
     def test_single_digit(self):
         self.assertEqual(1, convert("I"))
         self.assertEqual(5, convert("V"))
+        self.assertEqual(10, convert("X"))
 
 
 if __name__ == '__main__':
