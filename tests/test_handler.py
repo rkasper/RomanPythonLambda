@@ -10,7 +10,7 @@ class TestHandlerCase(unittest.TestCase):
         event = {'queryStringParameters': param}
         result = index.handler(event, None)
         self.assertEqual(result['statusCode'], 200)
-        self.assertEqual(result['headers']['Content-Type'], 'application/json')
+        self.assertEqual(result['headers']['Content-Type'], 'text/plain')
         self.assertEqual(arabic, result['body'])
 
     def test_single_digit(self):

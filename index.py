@@ -24,4 +24,4 @@ def handler(event, context):
 
     return {'statusCode': 200,
             'body': arabic,
-            'headers': {'Content-Type': 'application/json'}}
+            'headers': {'Content-Type': 'text/plain'}}
