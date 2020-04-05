@@ -9,9 +9,9 @@ class TestHandlerCase(unittest.TestCase):
         param = {'roman': roman}
         event = {'queryStringParameters': param}
         result = index.handler(event, None)
-        # self.assertEqual(result['statusCode'], 200)
-        # self.assertEqual(result['headers']['Content-Type'], 'text/plain')
-        # self.assertEqual(arabic, result['body'])
+        self.assertEqual(result['statusCode'], 200)
+        self.assertEqual(result['headers']['Content-Type'], 'text/plain')
+        self.assertEqual(arabic, result['body'])
 
     def test_single_digit(self):
         self.assert_roman_converts_to_arabic('I', '1')
