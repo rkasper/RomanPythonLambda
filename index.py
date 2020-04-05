@@ -1,15 +1,13 @@
 import json
 import datetime
 
+from roman import convert
+
 
 def handler(event, context):
     roman = event['queryStringParameters']['roman']
-    if roman == 'I':
-        arabic = '1'
-    else:
-        arabic = '5'
+    arabic = str(convert(roman))
 
     return {'statusCode': 200,
-            # 'body': json.dumps(data),
             'body': arabic,
             'headers': {'Content-Type': 'application/json'}}
