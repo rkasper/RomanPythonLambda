@@ -13,13 +13,9 @@ class TestHandlerCase(unittest.TestCase):
         self.assertEqual(result['headers']['Content-Type'], 'application/json')
         self.assertEqual(arabic, result['body'])
 
-    def test_single_digit_i(self):
+    def test_single_digit(self):
         self.assert_roman_converts_to_arabic('I', '1')
-
-    def test_single_digit_v(self):
         self.assert_roman_converts_to_arabic('V', '5')
-
-    def test_single_digit_x(self):
         self.assert_roman_converts_to_arabic('X', '10')
 
 
