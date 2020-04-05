@@ -10,13 +10,13 @@ def handler(event, context):
 
     Just push to master, and the code will get pulled through the CodeStar build pipeline.
 
-    To invoke the service, do an HTTPS GET https://9zbdaspg2k.execute-api.us-east-2.amazonaws.com/Prod?roman=XXX
+    To invoke the service, do an HTTPS GET https://blahblahblah.execute-api.us-east-2.amazonaws.com/Prod?roman=XXX
     where XXX is the Roman number to convert to Arabic.
 
     Examples:
-        $ curl https://9zbdaspg2k.execute-api.us-east-2.amazonaws.com/Prod?roman=I
+        $ curl https://blahblahblah.execute-api.us-east-2.amazonaws.com/Prod?roman=I
         1
-        $ curl https://9zbdaspg2k.execute-api.us-east-2.amazonaws.com/Prod?roman=V
+        $ curl https://blahblahblah.execute-api.us-east-2.amazonaws.com/Prod?roman=V
         5
     """
     roman = event['queryStringParameters']['roman']
