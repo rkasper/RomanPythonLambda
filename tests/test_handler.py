@@ -3,7 +3,14 @@ import index
 
 
 class TestHandlerCase(unittest.TestCase):
-    """Tests the Lambda request handler. These tests are more-or-less BDD-style tests."""
+    """
+    Tests the web service, which is implemented as a Lambda request handler.
+
+    These tests are more-or-less acceptance tests. The idea is to to A-TDD - for each story:
+    - Add an acceptance test for the story.
+    - Do micro-scale TDD to get the story done, committing locally along the way.
+    - When the acceptance test goes green, push to master.
+    """
 
     def assert_roman_converts_to_arabic(self, roman, arabic):
         param = {'roman': roman}
