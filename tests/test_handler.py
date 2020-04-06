@@ -17,7 +17,7 @@ class TestHandlerCase(unittest.TestCase):
         self.assert_roman_converts_to_arabic('I', '1')
         self.assert_roman_converts_to_arabic('V', '5')
         self.assert_roman_converts_to_arabic('X', '10')
-        self.assert_roman_converts_to_arabic('L', 50)
+        self.assert_roman_converts_to_arabic('L', '50')
 
 
 if __name__ == '__main__':
