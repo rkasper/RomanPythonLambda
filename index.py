@@ -19,13 +19,19 @@ def handler(event, context):
         5
     """
 
-    roman = event['queryStringParameters']['roman']
-    arabic = str(convert(roman))
-
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    logger.info('Input Roman: ' + roman + ', output Arabic: ' + arabic)
+
+    if 'queryStringParameters' in event:
+        roman = event['queryStringParameters']['roman']
+        arabic = str(convert(roman))
+        logger.info('Received argument ?roman="' + roman + '". Returning arabic ' + arabic)
+        body = arabic
+    else:
+        logger.info('Received no arguments. Returning documentation.')
+        body = 'I convert Roman numerals to Arabic integers. To invoke me, use the ?roman= parameter. For example: ' \
+               '?roman="V" '
 
     return {'statusCode': 200,
-            'body': arabic,
+            'body': body,
             'headers': {'Content-Type': 'text/plain'}}

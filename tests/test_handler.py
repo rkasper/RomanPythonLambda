@@ -20,6 +20,13 @@ class TestHandlerCase(unittest.TestCase):
         self.assertEqual(result['headers']['Content-Type'], 'text/plain')
         self.assertEqual(arabic, result['body'])
 
+    def test_web_service_with_no_parameter_returns_documentation(self):
+        event = {}
+        result = index.handler(event, None)
+        self.assertEqual(result['statusCode'], 200)
+        self.assertEqual(result['headers']['Content-Type'], 'text/plain')
+        self.assertTrue(result['body'] != '')
+
     def test_single_digit(self):
         self.assert_roman_converts_to_arabic('I', '1')
         self.assert_roman_converts_to_arabic('V', '5')
