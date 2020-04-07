@@ -1,5 +1,3 @@
-import json
-import datetime
 import logging
 
 from roman import convert
@@ -21,14 +19,12 @@ def handler(event, context):
         5
     """
 
-    print('Richard logged this using a print statement')
+    roman = event['queryStringParameters']['roman']
+    arabic = str(convert(roman))
 
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    logger.info('Richard logged this using the logging library.')
-
-    roman = event['queryStringParameters']['roman']
-    arabic = str(convert(roman))
+    logger.info('Input Roman value:' + roman + ', output Arabic:' + arabic)
 
     return {'statusCode': 200,
             'body': arabic,
