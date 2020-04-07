@@ -24,7 +24,7 @@ def handler(event, context):
 
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    logger.info('Input Roman value:' + roman + ', output Arabic:' + arabic)
+    logger.info('Input Roman: ' + roman + ', output Arabic: ' + arabic)
 
     return {'statusCode': 200,
             'body': arabic,
