@@ -1,5 +1,6 @@
 import json
 import datetime
+import logging
 
 from roman import convert
 
@@ -19,6 +20,13 @@ def handler(event, context):
         $ curl https://blahblahblah.execute-api.us-east-2.amazonaws.com/Prod?roman=V
         5
     """
+
+    print('Richard logged this using a print statement')
+
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    logger.info('Richard logged this using the logging library.')
+
     roman = event['queryStringParameters']['roman']
     arabic = str(convert(roman))
 
