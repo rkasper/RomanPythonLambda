@@ -22,7 +22,7 @@ def handler(event, context):
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
-    if event is None:
+    if type(None) == type(event):
         logger.info('Received no arguments. Returning documentation.')
         body = 'I convert Roman numerals to Arabic integers. To invoke me, use the ?roman= parameter. For example: ' \
                '?roman="V" '
