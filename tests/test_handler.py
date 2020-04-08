@@ -20,9 +20,8 @@ class TestHandlerCase(unittest.TestCase):
         self.assertEqual(result['headers']['Content-Type'], 'text/plain')
         self.assertEqual(arabic, result['body'])
 
-    def test_web_service_with_no_parameter_returns_documentation(self):
-        event = {}
-        result = index.handler(event, None)
+    def test_web_service_with_no_args_returns_documentation(self):
+        result = index.handler(None, None)
         self.assertEqual(result['statusCode'], 200)
         self.assertEqual(result['headers']['Content-Type'], 'text/plain')
         self.assertTrue(result['body'] != '')
