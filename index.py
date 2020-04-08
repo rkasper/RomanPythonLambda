@@ -22,14 +22,17 @@ def handler(event, context):
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
+    logger.info('event is: ' + str(event))
+
     if type(None) == type(event):
         logger.info('Received no arguments. Returning documentation.')
         body = 'I convert Roman numerals to Arabic integers. To invoke me, use the ?roman= parameter. For example: ' \
                '?roman="V" '
     else:
         roman = event['queryStringParameters']['roman']
+        logger.info('Received argument ?roman="' + roman)
         arabic = str(convert(roman))
-        logger.info('Received argument ?roman="' + roman + '". Returning arabic ' + arabic)
+        logger.info('Returning arabic ' + arabic)
         body = arabic
 
     return {'statusCode': 200,
