@@ -1,8 +1,0 @@
-version: 0.2
-
-phases:
-  build:
-    commands:
-
-      # Discover and run unit tests in the 'tests/e2e' directory.
-      - python -m unittest discover tests/e2e
