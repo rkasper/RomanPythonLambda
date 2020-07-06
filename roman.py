@@ -1,3 +1,6 @@
+"""
+Converts Roman strings to plain old integers
+"""
 def convert(roman):
     """
     Converts Roman strings to plain old integers
