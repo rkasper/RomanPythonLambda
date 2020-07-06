@@ -9,8 +9,8 @@ phases:
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
 
-#      # We'll use pylint for static code quality analysis
-#      - pip install --upgrade pylint
+      # Use pylint for static code quality analysis
+      - pip install --upgrade pylint
 
   pre_build:
     commands:
@@ -18,9 +18,9 @@ phases:
       # Discover and run unit tests in the 'tests' directory. For more information, see <https://docs.python.org/3/library/unittest.html#test-discovery>
       - python -m unittest discover tests
 
-#      # Make sure code quality is a 9 out of 10, according to pylint
-#      - pylint --fail-under=9 *.py
-  
+      # Run pylint to ensure high code quality
+      - pylint --fail-under=9 *.py
+
   build:
     commands:
 
