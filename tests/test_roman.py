@@ -11,6 +11,7 @@ class TestRomanCase(unittest.TestCase):
         self.assertEqual(10, convert("X"))
         self.assertEqual(50, convert("L"))
         self.assertEqual(100, convert("C"))
+        self.assertEqual(500, convert("D"))
 
 
 if __name__ == '__main__':
