@@ -14,5 +14,7 @@ def convert(roman):
         return 10
     elif roman == "L":
         return 50
-    else:
+    elif  roman == "C":
         return 100
+    else:
+        return 500
